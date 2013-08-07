@@ -1,0 +1,151 @@
+<html>
+<title>IITB Hospital - Appointments</title>
+<link rel="stylesheet" type="text/css" href="Aristo.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'-->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	onload = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".screen").css("margin-top", ($(window).height() - $(".screen").height())/2 + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+		
+	onresize = function() {
+					$(".login-screen", "#menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".screen").css("margin-top", ($(window).height() - $(".screen").height())/2 + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+				
+	$(function(){			
+		$("#login-button").button();
+        $("#submit").button();
+        $("#back-button").button({
+                    icons: {
+                        primary: 'ui-icon-arrowreturnthick-1-w'
+                    }
+                });
+        $("#logout-button").button({
+                    icons: {
+                        secondary: 'ui-icon-transferthick-e-w'
+                    }
+                });
+        $(".confirm-cancel").dialog({
+            autoOpen: false,
+            draggable: false,
+            modal: true,
+            resizable: false,
+            buttons: {
+                "Confirm": function() {
+                    $( this ).dialog( "close" );
+                }
+            }
+        });
+	});
+
+</script>
+
+<body>
+	<div class="screen">
+        <div class="back-button-div"><button id="back-button">Back</button></div>
+        <div class="logout-button-div"><button id="logout-button">Logout</button></div>
+		<div class="title">
+        	More Appointments
+        </div>
+        <div class="screen-div" style="max-height: 500px">
+            <div class="screen-div-title">Current appointments</div>
+            <table class="table" summary="Current Appointments">
+                <thead>
+                    <tr>
+                        <th scope="col">Doctor's Name</th>
+                        <th scope="col">Dept.</th>
+                        <th scope="col">Date</th>
+                        <th scope="col">Slot</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Dr. Bansal</td>
+                        <td>Phsycho.</td>
+                        <td>12/8/12</td>
+                        <td>2-4PM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Charaswala</td>
+                        <td>Med.</td>
+                        <td>13/12/12</td>
+                        <td>10-12AM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Jagnikwa</td>
+                        <td>Gnaeno.</td>
+                        <td>10/10/12</td>
+                        <td>6-8AM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Bansal</td>
+                        <td>Phsycho.</td>
+                        <td>12/8/12</td>
+                        <td>2-4PM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Charaswala</td>
+                        <td>Med.</td>
+                        <td>13/12/12</td>
+                        <td>10-12AM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Jagnikwa</td>
+                        <td>Gnaeno.</td>
+                        <td>10/10/12</td>
+                        <td>6-8AM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Bansal</td>
+                        <td>Phsycho.</td>
+                        <td>12/8/12</td>
+                        <td>2-4PM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Charaswala</td>
+                        <td>Med.</td>
+                        <td>13/12/12</td>
+                        <td>10-12AM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tr>
+                        <td>Dr. Jagnikwa</td>
+                        <td>Gnaeno.</td>
+                        <td>10/10/12</td>
+                        <td>6-8AM</td>
+                        <td class="cancel-app" onclick="$('.confirm-cancel').dialog('open')">Cancel</td>
+                    </tr>
+                    <tfoot>
+                        <tr>
+                            <td colspan="5"><em><a href="#">Other appointments >></a></em></td>
+                        </tr>
+                    </tfoot>
+                </tbody>
+            </table>
+        </div>
+				
+	</div>
+    <div class="confirm-cancel" title="Please Confirm">
+        <span class="ui-icon ui-icon-alert" style="float: left; margin: 0 7px 20px 0;"></span>Are you sure to cancel this appointment?
+    </div>
+</body>
+</html>

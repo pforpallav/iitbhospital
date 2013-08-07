@@ -1,0 +1,33 @@
+<html>
+<title>IITB Hospital - New Prescription</title>
+<link rel="stylesheet" type="text/css" href="Aristo.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'-->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	onload = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".screen").css("margin-top", ($(window).height() - $(".screen").height())/2 + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+		
+	onresize = function() {
+					$(".login-screen", "#menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".screen").css("margin-top", ($(window).height() - $(".screen").height())/2 + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+</script>
+
+<body>
+	<div class="screen" style="width:560px;height:auto;padding:10px;text-align:center">
+        	<iframe width="560" height="315" src="http://www.youtube.com/embed/hXUwWljkNAI" frameborder="0" allowfullscreen></iframe></br></br>
+            <b>Either you are not logged in OR this page doesn't exists!</b>
+	</div>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+<title>IITB Hospital - Login</title>
+<link rel="stylesheet" type="text/css" href="Aristo.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'-->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	onload = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+		
+	onresize = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+				
+	$(function(){			
+		$("#login-button").button();
+	});
+
+</script>
+
+<body>
+    <div class="login-screen" style="text-align: center">
+		<div id="login-screen-title">
+			IIT Bombay Hospital
+		</div>
+		
+		The given pink slip ID was not found in the database. Are you sure you put in the right ID?
+		</form>
+	</div>
+</body>
+</html>

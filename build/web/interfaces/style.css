@@ -1,0 +1,208 @@
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/_xyN3apAT_yRRDeqB3sPRg.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Bold'), local('Ubuntu-Bold'), url(http://themes.googleusercontent.com/static/fonts/ubuntu/v4/0ihfXUL2emPh0ROJezvraD8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
+}
+
+body{
+	background: url("images/LinenTexture.jpg");
+	font-family: 'Ubuntu', sans-serif;
+	color: #666;
+	font-size: 12;
+}
+
+.login-screen, .menu-screen{
+	background: url("images/texture_gray.png") #E9E9E9;
+	margin: 0 auto;
+	height: 250px;
+	width: 400px;
+
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow:  0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+    box-shadow:  0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+.screen{
+	background: url("images/texture_gray.png") #E9E9E9;
+	margin: 0 auto;
+	width: 800px;
+	padding-bottom: 15px;
+
+	-webkit-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow:  0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+    box-shadow:  0px 0px 5px 4px rgba(0, 0, 0, 0.2);
+}
+
+#login-screen-title, .title{
+	text-transform: uppercase;
+	font-size: 30;
+	text-align: center;
+	padding: 10px;
+	font-weight: 700;
+	color: #888;
+	text-shadow: 0px -1px 0px rgba(0,0,0,.5);
+}
+
+#login-screen-tip{
+	text-align: center;
+	font-size: 10;
+}
+
+#login-screen-label{
+	color: #666;
+	padding: 0 15px;
+	display: none;
+}
+
+.login-screen-input{
+	font-size: 20;
+	height: 40px;
+	margin: 15px 0 0 15px;
+	width: 370;
+	text-align: center;
+	color: #666;
+}
+
+#login-button{
+	margin-top: 20px;
+	margin-left: 162px;
+}
+
+
+.table
+{
+	font-size: 12px;
+	margin: 10px auto !important;
+	width: auto;
+	text-align: left;
+	border-collapse: collapse;
+	border: 1px solid #666;
+	background: white;
+}
+.table th
+{
+	padding: 8px 17px 8px 17px;
+	font-weight: normal;
+	font-size: 14px;
+	color: #999;
+	border-bottom: 1px dashed #666;
+}
+.table td
+{
+	padding: 7px 17px 7px 17px;
+	color: #666;
+}
+.table tbody tr:hover td
+{
+	color: #666;
+	background: #DDD;
+}
+.table tfoot{
+	font-size: 10px;
+}
+.table input{
+	width: 150px;
+}
+
+.table-div{
+        overflow-y: auto;
+        max-height: 190px;
+}
+
+
+.cancel-app{
+	cursor: pointer;
+}
+
+.screen-div{
+	max-height: 250px;
+	border-radius: 5px;
+	padding: 20px;
+	background: rgba(0,0,0,0.05);
+	margin: 10px 20px;
+
+	-webkit-box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .2);
+	box-shadow: inset 0px 0px 10px 5px rgba(0, 0, 0, .2);
+}
+
+.screen-div-title{
+	text-align: center;
+	text-transform: uppercase;
+	font-weight: 700;
+	font-size: 14px;
+}
+
+.screen-div-inside{
+	text-align: center;
+	margin: 10px 0;
+}
+
+.back-button-div{
+	float: left;
+	margin-left: 20px;
+	margin-top: 15px;
+}
+
+.logout-button-div{
+	float: right;
+	margin-right: 20px;
+	margin-top: 15px;
+}
+
+.step-title{
+	font-weight: 600;
+}
+
+.big-button{
+	vertical-align: middle;
+	display: table-cell;
+	width: 130px;
+	height: 100px;
+}
+
+.label-set{
+	position: relative;
+	height: 25px;
+	margin-top: 5px;
+}
+
+.label-set > label{
+	top: 8px;
+	right: 413px;
+	position: absolute;
+}
+
+.label-set > input, .label-set > textarea{
+	position: absolute;
+	left: 311px;
+	width: 150px;
+}
+
+.ui-combobox {
+        position: relative;
+        display: inline-block;
+    }
+
+.ui-combobox-toggle {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        margin-left: -1px;
+        padding: 0;
+}
+
+.ui-combobox-input {
+        margin: 0;
+        padding: 0.3em;
+}

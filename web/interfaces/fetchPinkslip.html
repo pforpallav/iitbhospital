@@ -1,0 +1,46 @@
+<html>
+<title>IITB Hospital - Login</title>
+<link rel="stylesheet" type="text/css" href="Aristo.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'-->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	onload = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+		
+	onresize = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+				
+	$(function(){			
+		$("#login-button").button();
+	});
+
+</script>
+
+<body>
+	<div class="login-screen">
+		<div id="login-screen-title">
+			IIT Bombay Hospital
+		</div>
+		<div id="login-screen-tip">
+			Enter the ID of the PinkSlip to verify
+		</div>
+		<form action="../showPinkslip" name="frmLogin" method="post" class="ui-form">
+			<div id="login-screen-label">
+				PinkSlip ID
+			</div>
+			<input name="pinkslip_id" size=30 type="text" class="login-screen-input" onblur="if (this.value == '') {this.value = 'PinkSlip ID';}" onfocus="if (this.value == 'PinkSlip ID') {this.value = '';}" value="PinkSlip ID"/>
+			
+	      	<input type="submit" value="Verify" id="login-button"/>
+		</form>
+	</div>
+</body>
+</html>

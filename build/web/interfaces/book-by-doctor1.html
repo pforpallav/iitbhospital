@@ -1,0 +1,112 @@
+<html>
+<title>IITB Hospital - Book Appointment</title>
+<link rel="stylesheet" type="text/css" href="Aristo.css">
+<link rel="stylesheet" type="text/css" href="style.css">
+<!--link href='http://fonts.googleapis.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'-->
+
+<script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+<script type="text/javascript" src="js/jquery-ui.min.js"></script>
+<script type="text/javascript">
+	onload = function() {
+					$(".login-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".screen").css("margin-top", ($(window).height() - $(".screen").height())/2 + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+		
+	onresize = function() {
+					$(".login-screen", "#menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".menu-screen").css("margin-top", ($(window).height()/2 - 200) + 'px');
+					$(".screen").css("margin-top", ($(window).height() - $(".screen").height())/2 + 'px');
+					
+					//alert(document.documentElement.clientHeight + 'px');
+				};
+				
+	$(function(){			
+		$("#login-button").button();
+        $("#submit").button();
+        $("#back-button").button({
+                    icons: {
+                        primary: 'ui-icon-arrowreturnthick-1-w'
+                    }
+                });
+        $("#logout-button").button({
+                    icons: {
+                        secondary: 'ui-icon-transferthick-e-w'
+                    }
+                });
+	});
+
+</script>
+
+<body>
+	<div class="screen">
+        <div class="back-button-div"><button id="back-button">Back</button></div>
+        <div class="logout-button-div"><button id="logout-button">Logout</button></div>
+		<div class="title">
+        	Book by Doctor
+        </div>
+        <div class="screen-div" style="max-height: 700px">
+            <div class="screen-div-title">Available doctors in Surgery Dept.</div>
+            <div class="table-div" style="max-height:500px">
+            <table class="table" summary="Current Appointments">
+                <thead>
+                    <tr>
+                        <th scope="col">Doctor's Name</th>
+                        <th scope="col">Quali.</th>
+                        <th scope="col">Designation</th>
+                        <th scope="col">Age</th>
+                        <th scope="col"> </th>
+                    </tr>
+                </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Bansal</td>
+                            <td>MBBS</td>
+                            <td>Sr. doctor</td>
+                            <td>36</td>
+                            <td class="cancel-app" onclick="">Choose</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Charaswala</td>
+                            <td>MBBS</td>
+                            <td>Sr. doctor</td>
+                            <td>42</td>
+                            <td class="cancel-app" onclick="">Choose</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Jagnikwa</td>
+                            <td>MS, MD</td>
+                            <td>Sr. doctor</td>
+                            <td>36</td>
+                            <td class="cancel-app" onclick="">Choose</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Bansal</td>
+                            <td>MBBS</td>
+                            <td>Sr. doctor</td>
+                            <td>36</td>
+                            <td class="cancel-app" onclick="">Choose</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Charaswala</td>
+                            <td>MBBS</td>
+                            <td>Sr. doctor</td>
+                            <td>42</td>
+                            <td class="cancel-app" onclick="">Choose</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Jagnikwa</td>
+                            <td>MS, MD</td>
+                            <td>Sr. doctor</td>
+                            <td>36</td>
+                            <td class="cancel-app" onclick="">Choose</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>				
+	</div>
+</body>
+</html>
