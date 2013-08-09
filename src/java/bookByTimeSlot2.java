@@ -61,10 +61,11 @@ public class bookByTimeSlot2 extends HttpServlet {
      * error
      * occurs
      */
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String DOCTOR_QUERY="Select doctor.doc_id,doctor.name ,qualifications,designation,age from doctor,department,doctor_has_timeslot where doctor.department_id=department.department_id and department.name=? and doctor.doc_id=doctor_has_timeslot.doc_id and doctor_has_timeslot.time_slot_id=?";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

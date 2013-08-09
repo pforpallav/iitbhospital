@@ -62,10 +62,11 @@ public class getTimeSlots extends HttpServlet {
      * occurs
      */
     
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String TIMESLOT_QUERY="select * from (Select start_time,end_time,timeslot.time_slot_id   from doctor_has_timeslot,timeslot where doc_id=? and doctor_has_timeslot.time_slot_id = timeslot.time_slot_id and timeslot.day=?)as t  where t.time_slot_id not in (select timeslot.time_slot_id from timeslot,(Select appointments.time_slot_id as t_id,count(*) as total from appointments where  appointments.doc_id=?   and appointments.date=?  group by appointments.time_slot_id having total=(select patient_limit from doctor_has_timeslot where doc_id=? and time_slot_id=t_id) )as full where full.t_id=timeslot.time_slot_id);";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {

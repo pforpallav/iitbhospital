@@ -60,10 +60,11 @@ public class doctorGetPatientName extends HttpServlet {
      * error
      * occurs
      */
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String STUDENT_QUERY="select name from student where roll_no=?;";
     private static final String STAFF_QUERY="select name from staff where staff_id=?;";
     

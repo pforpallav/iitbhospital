@@ -62,9 +62,11 @@ public class showPrescription extends HttpServlet {
      * error
      * occurs
      */
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String PRESCRIPTION_QUERY="SELECT * from prescription where prescription_id=?;";
     private static final String DOC_NAME_QUERY="SELECT name from doctor where doc_id=?;";
     private static final String PATIENT_NAME_QUERY="(SELECT name from student where roll_no=?) union (SELECT name from staff where staff_id=?);";

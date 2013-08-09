@@ -36,10 +36,11 @@ public class appointments extends HttpServlet {
      * @throws ServletException if a servlet-specific error occurs
      * @throws IOException if an I/O error occurs
      */
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String APPOINTMENT_QUERY = "SELECT appointment_id, doctor.name as doc_name, department.name as dep_name, date, start_time, end_time FROM doctor, department, appointments, timeslot WHERE appointments.patient_id=? and appointments.date>=NOW() and appointments.doc_id=doctor.doc_id and doctor.department_id=department.department_id and appointments.time_slot_id=timeslot.time_slot_id;";
     private static final String DOCTOR_INFO_QUERY = "select doctor.name as doc_name,department.name as dep_name  from doctor,department where doc_id=? and doctor.department_id=department.department_id";
     private static final String TIMESLOT_INFO_QUERY = "select * from timeslot where timeslot_id=?";

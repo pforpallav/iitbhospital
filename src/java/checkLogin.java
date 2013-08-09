@@ -37,10 +37,11 @@ public class checkLogin extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static final ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String LOGIN_PATIENT_QUERY = "select * from patient where patient_id=?";
     private static final String LOGIN_STUDENT_QUERY = "select * from student where roll_no=? and password=?";
     private static final String LOGIN_STAFF_QUERY = "select * from staff where staff_id=? and password=?";
@@ -204,6 +205,7 @@ public class checkLogin extends HttpServlet {
         try
         {
             String url = "jdbc:mysql://"+DBSERVER+"/"+DBNAME+"?user="+DB_USERNAME+"&password="+DB_PASSWORD;
+            System.out.println(url);
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url);
         } 

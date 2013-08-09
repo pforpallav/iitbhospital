@@ -61,10 +61,11 @@ public class bookAppointment extends HttpServlet {
      * error
      * occurs
      */
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String BY_DOCTOR_QUERY="Select doc_id,doctor.name ,qualifications,designation,age from doctor,department where doctor.department_id=department.department_id and department.name=?";
     private static final String BY_TIMESLOT_QUERY="Select * from timeslot";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)

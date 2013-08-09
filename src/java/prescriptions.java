@@ -37,10 +37,11 @@ public class prescriptions extends HttpServlet {
      * @throws IOException if an I/O error occurs
      */
     
-    private static final String DBNAME = "mydb";
-    private static final String DB_USERNAME = "root";
-    private static final String DB_PASSWORD = "vallap";
-    private static final String DBSERVER = "localhost";
+    private static ConfigFetcher fetcher = new ConfigFetcher();
+    private static final String DBNAME = fetcher.fetchDBNAME();
+    private static final String DB_USERNAME = fetcher.fetchDBUSER();
+    private static final String DB_PASSWORD = fetcher.fetchDBPASS();
+    private static final String DBSERVER = fetcher.fetchDBSERVER();
     private static final String PRES_QUERY = "select doctor.name as doc_name,prescription.date,prescription_id,prescription.fee,department.name as dep_name from prescription,doctor,department where prescription.patient_id=? and prescription.doc_id=doctor.doc_id and doctor.department_id=department.department_id order by prescription.date desc";
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
