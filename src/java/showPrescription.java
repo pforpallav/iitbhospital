@@ -156,7 +156,7 @@ public class showPrescription extends HttpServlet {
         Connection con=null;
         try
         {
-            String url = "jdbc:mysql://10.3.113.29:3306/"+DBNAME+"?user="+DB_USERNAME+"&password="+DB_PASSWORD;
+            String url = "jdbc:mysql://"+DBSERVER+"/"+DBNAME+"?user="+DB_USERNAME+"&password="+DB_PASSWORD;
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection(url);
         } 
